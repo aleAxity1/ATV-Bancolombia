@@ -1,9 +1,9 @@
-package bancolombia.service.impl;
+package com.axity.office.service.impl;
 
-import bancolombia.commons.DTO.PositionDTO;
-import bancolombia.model.Position;
-import bancolombia.persistence.PositionRepository;
-import bancolombia.service.PositionService;
+import com.axity.office.commons.dto.PositionDTO;
+import com.axity.office.model.Position;
+import com.axity.office.persistence.PositionRepository;
+import com.axity.office.service.PositionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

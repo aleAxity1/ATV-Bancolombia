@@ -1,9 +1,9 @@
-package bancolombia.service.impl;
+package com.axity.office.service.impl;
 
-import bancolombia.commons.DTO.ProductByUserDTO;
-import bancolombia.model.ProductByUser;
-import bancolombia.persistence.ProductByUserRepository;
-import bancolombia.service.ProductByUserService;
+import com.axity.office.commons.dto.ProductByUserDTO;
+import com.axity.office.model.ProductByUser;
+import com.axity.office.persistence.ProductByUserRepository;
+import com.axity.office.service.ProductByUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

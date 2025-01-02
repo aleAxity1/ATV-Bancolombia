@@ -1,4 +1,4 @@
-package bancolombia.commons.DTO;
+package com.axity.office.commons.dto;
 
 import lombok.Getter;
 import lombok.Setter;

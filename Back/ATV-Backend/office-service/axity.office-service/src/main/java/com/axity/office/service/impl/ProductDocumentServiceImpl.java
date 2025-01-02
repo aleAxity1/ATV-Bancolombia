@@ -1,9 +1,9 @@
-package bancolombia.service.impl;
+package com.axity.office.service.impl;
 
-import bancolombia.commons.DTO.ProductDocumentDTO;
-import bancolombia.model.ProductDocument;
-import bancolombia.persistence.ProductDocumentRepository;
-import bancolombia.service.ProductDocumentService;
+import com.axity.office.commons.dto.ProductDocumentDTO;
+import com.axity.office.model.ProductDocument;
+import com.axity.office.persistence.ProductDocumentRepository;
+import com.axity.office.service.ProductDocumentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,12 +20,12 @@ public class ProductDocumentServiceImpl implements ProductDocumentService {
     public ProductDocumentDTO createProductDocument(ProductDocumentDTO productDocumentDTO) {
         ProductDocument productDocument = new ProductDocument();
         // Map DTO to Entity
-        productDocument.setXpCopR(productDocumentDTO.getXpCopR());
-        productDocument.setXpCodO(productDocumentDTO.getXpCodO());
-        productDocument.setXpDsDo(productDocumentDTO.getXpDsDo());
-        productDocument.setXpCta(productDocumentDTO.getXpCta());
-        productDocument.setXpStDo(productDocumentDTO.getXpStDo());
-        productDocument.setXpFeCa(productDocumentDTO.getXpFeCa());
+        productDocument.setXpcopr(productDocumentDTO.getXpcopr());
+        productDocument.setXpcodo(productDocumentDTO.getXpcodo());
+        productDocument.setXpdsdo(productDocumentDTO.getXpdsdo());
+        productDocument.setXpcta(productDocumentDTO.getXpcta());
+        productDocument.setXpstdo(productDocumentDTO.getXpstdo());
+        productDocument.setXpfeca(productDocumentDTO.getXpfeca());
 
         productDocument = productDocumentRepository.save(productDocument);
 
@@ -45,13 +45,13 @@ public class ProductDocumentServiceImpl implements ProductDocumentService {
 
     @Override
     public ProductDocumentDTO updateProductDocument(ProductDocumentDTO productDocumentDTO) {
-        ProductDocument productDocument = productDocumentRepository.findById(productDocumentDTO.getXpCopR()).orElse(null);
+        ProductDocument productDocument = productDocumentRepository.findById(productDocumentDTO.getXpcopr()).orElse(null);
         if (productDocument != null) {
             // Update fields
-            productDocument.setXpDsDo(productDocumentDTO.getXpDsDo());
-            productDocument.setXpCta(productDocumentDTO.getXpCta());
-            productDocument.setXpStDo(productDocumentDTO.getXpStDo());
-            productDocument.setXpFeCa(productDocumentDTO.getXpFeCa());
+            productDocument.setXpdsdo(productDocumentDTO.getXpdsdo());
+            productDocument.setXpcta(productDocumentDTO.getXpcta());
+            productDocument.setXpstdo(productDocumentDTO.getXpstdo());
+            productDocument.setXpfeca(productDocumentDTO.getXpfeca());
 
             productDocument = productDocumentRepository.save(productDocument);
         }
@@ -65,12 +65,12 @@ public class ProductDocumentServiceImpl implements ProductDocumentService {
 
     private ProductDocumentDTO mapToDTO(ProductDocument productDocument) {
         ProductDocumentDTO dto = new ProductDocumentDTO();
-        dto.setXpCopR(productDocument.getXpCopR());
-        dto.setXpCodO(productDocument.getXpCodO());
-        dto.setXpDsDo(productDocument.getXpDsDo());
-        dto.setXpCta(productDocument.getXpCta());
-        dto.setXpStDo(productDocument.getXpStDo());
-        dto.setXpFeCa(productDocument.getXpFeCa());
+        dto.setXpcopr(productDocument.getXpcopr());
+        dto.setXpcodo(productDocument.getXpcodo());
+        dto.setXpdsdo(productDocument.getXpdsdo());
+        dto.setXpcta(productDocument.getXpcta());
+        dto.setXpstdo(productDocument.getXpstdo());
+        dto.setXpfeca(productDocument.getXpfeca());
         return dto;
     }
 }

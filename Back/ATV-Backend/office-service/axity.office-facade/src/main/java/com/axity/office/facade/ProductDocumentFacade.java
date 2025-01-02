@@ -1,6 +1,6 @@
-package bancolombia.facade;
+package com.axity.office.facade;
 
-import bancolombia.commons.DTO.ProductDocumentDTO;
+import com.axity.office.commons.dto.ProductDocumentDTO;
 
 import java.util.List;
 

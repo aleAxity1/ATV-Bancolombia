@@ -1,9 +1,9 @@
-package bancolombia.service.impl;
+package com.axity.office.service.impl;
 
-import bancolombia.commons.DTO.BranchDTO;
-import bancolombia.model.Branch;
-import bancolombia.persistence.BranchRepository;
-import bancolombia.service.BranchService;
+import com.axity.office.commons.dto.BranchDTO;
+import com.axity.office.model.Branch;
+import com.axity.office.persistence.BranchRepository;
+import com.axity.office.service.BranchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

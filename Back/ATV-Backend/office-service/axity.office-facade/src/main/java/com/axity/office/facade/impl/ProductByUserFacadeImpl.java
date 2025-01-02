@@ -1,8 +1,8 @@
-package bancolombia.facade.impl;
+package com.axity.office.facade.impl;
 
-import bancolombia.commons.DTO.ProductByUserDTO;
-import bancolombia.facade.ProductByUserFacade;
-import bancolombia.service.ProductByUserService;
+import com.axity.office.commons.dto.ProductByUserDTO;
+import com.axity.office.facade.ProductByUserFacade;
+import com.axity.office.service.ProductByUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

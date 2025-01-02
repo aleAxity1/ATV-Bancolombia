@@ -1,8 +1,8 @@
-package bancolombia.facade.impl;
+package com.axity.office.facade.impl;
 
-import bancolombia.commons.DTO.PositionDTO;
-import bancolombia.facade.PositionFacade;
-import bancolombia.service.PositionService;
+import com.axity.office.commons.dto.PositionDTO;
+import com.axity.office.facade.PositionFacade;
+import com.axity.office.service.PositionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

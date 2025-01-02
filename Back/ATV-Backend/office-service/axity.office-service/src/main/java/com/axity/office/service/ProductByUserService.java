@@ -1,6 +1,6 @@
-package bancolombia.service;
+package com.axity.office.service;
 
-import bancolombia.commons.DTO.ProductByUserDTO;
+import com.axity.office.commons.dto.ProductByUserDTO;
 
 import java.util.List;
 

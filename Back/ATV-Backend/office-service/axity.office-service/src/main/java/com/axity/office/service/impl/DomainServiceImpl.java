@@ -1,9 +1,9 @@
-package bancolombia.service.impl;
+package com.axity.office.service.impl;
 
-import bancolombia.commons.DTO.DomainDTO;
-import bancolombia.model.Domain;
-import bancolombia.persistence.DomainRepository;
-import bancolombia.service.DomainService;
+import com.axity.office.commons.dto.DomainDTO;
+import com.axity.office.model.Domain;
+import com.axity.office.persistence.DomainRepository;
+import com.axity.office.service.DomainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

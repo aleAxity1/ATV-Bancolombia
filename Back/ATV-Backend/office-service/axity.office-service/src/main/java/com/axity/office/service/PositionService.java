@@ -1,6 +1,6 @@
-package bancolombia.service;
+package com.axity.office.service;
 
-import bancolombia.commons.DTO.PositionDTO;
+import com.axity.office.commons.dto.PositionDTO;
 
 import java.util.List;
 

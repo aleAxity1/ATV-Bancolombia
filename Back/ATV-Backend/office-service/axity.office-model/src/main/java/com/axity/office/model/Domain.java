@@ -1,4 +1,4 @@
-package bancolombia.model;
+package com.axity.office.model;
 
 import lombok.Getter;
 import lombok.Setter;

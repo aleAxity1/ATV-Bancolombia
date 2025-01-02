@@ -1,6 +1,6 @@
-package bancolombia.persistence;
+package com.axity.office.persistence;
 
-import bancolombia.model.BranchByUser;
+import com.axity.office.model.BranchByUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BranchByUserRepository extends JpaRepository<BranchByUser, String> {

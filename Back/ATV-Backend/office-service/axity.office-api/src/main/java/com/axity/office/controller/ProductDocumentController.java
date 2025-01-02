@@ -1,7 +1,7 @@
-package bancolombia.controller;
+package com.axity.office.controller;
 
-import bancolombia.commons.DTO.ProductDocumentDTO;
-import bancolombia.facade.ProductDocumentFacade;
+import com.axity.office.commons.dto.ProductDocumentDTO;
+import com.axity.office.facade.ProductDocumentFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

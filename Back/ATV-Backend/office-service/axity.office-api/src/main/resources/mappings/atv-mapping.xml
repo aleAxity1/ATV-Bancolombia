@@ -1,7 +1,7 @@
 <mappings>
     <mapping>
-        <class-a>bancolombia.commons.DTO.UserDTO</class-a>
-        <class-b>bancolombia.model.User</class-b>
+        <class-a>com.axity.office.commons.dto.UserDTO</class-a>
+        <class-b>com.axity.office.model.User</class-b>
         <field>
             <a>xuuser</a>
             <b>xuuser</b>
@@ -28,8 +28,8 @@
         </field>
     </mapping>
     <mapping>
-        <class-a>bancolombia.commons.DTO.BranchByUserDTO</class-a>
-        <class-b>bancolombia.model.BranchByUser</class-b>
+        <class-a>com.axity.office.commons.dto.BranchByUserDTO</class-a>
+        <class-b>com.axity.office.model.BranchByUser</class-b>
         <field>
             <a>xsuser</a>
             <b>xsuser</b>
@@ -40,8 +40,8 @@
         </field>
     </mapping>
     <mapping>
-        <class-a>bancolombia.commons.DTO.ProductByUserDTO</class-a>
-        <class-b>bancolombia.model.ProductByUser</class-b>
+        <class-a>com.axity.office.commons.dto.ProductByUserDTO</class-a>
+        <class-b>com.axity.office.model.ProductByUser</class-b>
         <field>
             <a>xpuser</a>
             <b>xpuser</b>
@@ -52,8 +52,8 @@
         </field>
     </mapping>
     <mapping>
-        <class-a>bancolombia.commons.DTO.AccessByUserDTO</class-a>
-        <class-b>bancolombia.model.AccessByUser</class-b>
+        <class-a>com.axity.office.commons.dto.AccessByUserDTO</class-a>
+        <class-b>com.axity.office.model.AccessByUser</class-b>
         <field>
             <a>xacoac</a>
             <b>xacoac</b>
@@ -64,8 +64,8 @@
         </field>
     </mapping>
     <mapping>
-        <class-a>bancolombia.commons.DTO.ProductDocumentDTO</class-a>
-        <class-b>bancolombia.model.ProductDocument</class-b>
+        <class-a>com.axity.office.commons.dto.ProductDocumentDTO</class-a>
+        <class-b>com.axity.office.model.ProductDocument</class-b>
         <field>
             <a>xpcopr</a>
             <b>xpcopr</b>
@@ -92,8 +92,8 @@
         </field>
     </mapping>
     <mapping>
-        <class-a>bancolombia.commons.DTO.BranchDTO</class-a>
-        <class-b>bancolombia.model.Branch</class-b>
+        <class-a>com.axity.office.commons.dto.BranchDTO</class-a>
+        <class-b>com.axity.office.model.Branch</class-b>
         <field>
             <a>xnnmky</a>
             <b>xnnmky</b>
@@ -108,8 +108,8 @@
         </field>
     </mapping>
     <mapping>
-        <class-a>bancolombia.commons.DTO.PositionDTO</class-a>
-        <class-b>bancolombia.model.Position</class-b>
+        <class-a>com.axity.office.commons.dto.PositionDTO</class-a>
+        <class-b>com.axity.office.model.Position</class-b>
         <field>
             <a>xfapcd</a>
             <b>xfapcd</b>
@@ -184,8 +184,8 @@
         </field>
     </mapping>
     <mapping>
-        <class-a>bancolombia.commons.DTO.DomainDTO</class-a>
-        <class-b>bancolombia.model.Domain</class-b>
+        <class-a>com.axity.office.commons.dto.DomainDTO</class-a>
+        <class-b>com.axity.office.model.Domain</class-b>
         <field>
             <a>xddom</a>
             <b>xddom</b>
