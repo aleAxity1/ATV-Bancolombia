@@ -1,70 +1,41 @@
-package com.axity.office.facade.impl;
+package bancolombia.facade.impl;
+
+import bancolombia.commons.DTO.UserDTO;
+import bancolombia.facade.UserFacade;
+import bancolombia.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+@Component
+public class UserFacadeImpl implements UserFacade {
 
-import com.axity.office.commons.dto.UserDto;
-import com.axity.office.commons.request.PaginatedRequestDto;
-import com.axity.office.commons.response.GenericResponseDto;
-import com.axity.office.commons.response.PaginatedResponseDto;
-import com.axity.office.facade.UserFacade;
-import com.axity.office.service.UserService;
+    @Autowired
+    private UserService userService;
 
-/**
- * Class UserFacadeImpl
- * @author username@axity.com
- */
-@Service
-@Transactional
-public class UserFacadeImpl implements UserFacade
-{
-  @Autowired
-  private UserService userService;
-  /**
-   * {@inheritDoc}
-   */
-  @Override
-  public PaginatedResponseDto<UserDto> findUsers( PaginatedRequestDto request )
-  {
-    return this.userService.findUsers( request );
-  }
+    @Override
+    public UserDTO createUser(UserDTO userDTO) {
+        return userService.createUser(userDTO);
+    }
 
-  /**
-   * {@inheritDoc}
-   */
-  @Override
-  public GenericResponseDto<UserDto> find( Integer id )
-  {
-    return this.userService.find( id );
-  }
+    @Override
+    public List<UserDTO> getAllUsers() {
+        return userService.getAllUsers();
+    }
 
-  /**
-   * {@inheritDoc}
-   */
-  @Override
-  public GenericResponseDto<UserDto> create( UserDto dto )
-  {
-    return this.userService.create( dto );
-  }
+    @Override
+    public UserDTO getUserById(String id) {
+        return userService.getUserById(id);
+    }
 
-  /**
-   * {@inheritDoc}
-   */
-  @Override
-  public GenericResponseDto<Boolean> update( UserDto dto )
-  {
-    return this.userService.update( dto );
-  }
+    @Override
+    public UserDTO updateUser(String id, UserDTO userDTO) {
+        return userService.updateUser(id, userDTO);
+    }
 
-  /**
-   * {@inheritDoc}
-   */
-  @Override
-  public GenericResponseDto<Boolean> delete( Integer id )
-  {
-    return this.userService.delete( id );
-  }
+    @Override
+    public void deleteUser(String id) {
+        userService.deleteUser(id);
+    }
 }
