@@ -19,10 +19,10 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
   datasource:
-    url: jdbc:postgresql://localhost:5432/liquibase_db
+    url: jdbc:postgresql://localhost:5432/postgres_db
     driver-class-name: org.postgresql.Driver
-    username: liquibase_db
-    password: liquibase_password
+    username: postgres_user
+    password: postgres_password
 
 
 
