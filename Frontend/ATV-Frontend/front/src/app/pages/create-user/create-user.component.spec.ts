@@ -1,9 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { of, throwError } from 'rxjs';
-import { BasicUser } from 'src/app/model/http/users.model';
+import { BasicUser } from 'src/app/model/http/user.model';
 import { DataService } from 'src/app/services/data.service';
-import { UsersService } from 'src/app/services/users.service';
+import { UsersService } from 'src/app/services/user.service';
 import { MockUsersFormComponent } from 'src/mocks/components.mocks';
 import { CreateUserComponent } from './create-user.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

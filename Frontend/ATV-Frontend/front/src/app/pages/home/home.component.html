@@ -1,26 +1,25 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <h1>{{ "home.title" | translate }}</h1>
+  <div class="row mt-3">
+
+    <div class="col-md-3 text-center">
+      <button class="menu-custom-button" mat-raised-button color="primary" [routerLink]="['/users']">
+        {{ "users.title" | translate }}
+      </button>
     </div>
 
-    <div class="col-md-12 text-center">
-      <button mat-raised-button color="primary" [routerLink]="['/colors']">
+    <div class="col-md-3 text-center">
+      <button class="menu-custom-button" mat-raised-button color="primary" [routerLink]="['/colors']">
         [DEMO] {{ "colors.title" | translate }}
       </button>
     </div>
-    <div class="col-md-12 text-center mt-3">
-      <button mat-raised-button color="accent" [routerLink]="['/events']">
+    <div class="col-md-3 text-center">
+      <button class="menu-custom-button" mat-raised-button color="primary" [routerLink]="['/events']">
         [DEMO] SSE
       </button>
     </div>
-    <div class="col-md-12 text-center mt-3">
-      <button mat-raised-button color="secondary" [routerLink]="['/users']">
-        [DEMO] {{ "users.title" | translate }}
-      </button>
-    </div>
-    <div class="col-md-12 text-center mt-3">
-      <button mat-raised-button color="primary" [routerLink]="['/dashboard']">
+    
+    <div class="col-md-3 text-center">
+      <button class="menu-custom-button" mat-raised-button color="primary" [routerLink]="['/dashboard']">
         [DEMO] {{ "dashboard.title" | translate }}
       </button>
     </div>

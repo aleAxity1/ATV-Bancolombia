@@ -29,9 +29,11 @@
   "users": {
     "title": "Users",
     "columns": {
+      "idUser": "User Id",
       "name": "Name",
-      "age": "Age",
-      "phone": "Phone"
+      "position": "Position",
+      "domain": "Domain",
+      "accessLevel": "Access Level"
     },
     "create": "Create user"
   },

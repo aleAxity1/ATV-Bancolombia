@@ -6,11 +6,11 @@ import {
   TranslateLoader,
   TranslateModule,
 } from '@ngx-translate/core';
-import { UsersService } from 'src/app/services/users.service';
+import { UsersService } from 'src/app/services/user.service';
 import { of, throwError } from 'rxjs';
 import { UsersComponent } from './users.component';
 import { DataService } from 'src/app/services/data.service';
-import { User } from 'src/app/model/http/users.model';
+import { User } from 'src/app/model/http/user.model';
 import { RouterModule } from '@angular/router';
 
 describe('UsersComponent', () => {

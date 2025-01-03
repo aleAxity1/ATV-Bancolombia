@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BasicUser } from 'src/app/model/http/users.model';
+import { BasicUser } from 'src/app/model/http/user.model';
 
 import { UsersFormComponent } from './users-form.component';
 

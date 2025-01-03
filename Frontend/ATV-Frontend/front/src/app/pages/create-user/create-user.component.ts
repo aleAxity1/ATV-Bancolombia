@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { BasicUser } from 'src/app/model/http/users.model';
+import { BasicUser } from 'src/app/model/http/user.model';
 import { DataService } from 'src/app/services/data.service';
-import { UsersService } from 'src/app/services/users.service';
+import { UsersService } from 'src/app/services/user.service';
 import { UsersFormComponent } from '../../components/users-form/users-form.component';
 
 @Component({

@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { ConsumeService } from './consume.service';
 import { of } from 'rxjs';
-import { UsersService } from './users.service';
-import { User } from '../model/http/users.model';
+import { UsersService } from './user.service';
+import { User } from '../model/http/user.model';
 
 describe('UsersService', () => {
   let service: UsersService;

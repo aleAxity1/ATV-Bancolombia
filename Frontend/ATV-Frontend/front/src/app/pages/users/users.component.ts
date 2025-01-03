@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/model/http/users.model';
+import { User } from 'src/app/model/http/user.model';
 import { DataService } from 'src/app/services/data.service';
-import { UsersService } from 'src/app/services/users.service';
+import { UsersService } from 'src/app/services/user.service';
 import { TranslateModule } from '@ngx-translate/core';
 import {
   MatTable,
@@ -40,7 +40,7 @@ import { MatButton } from '@angular/material/button';
   ],
 })
 export class UsersComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name', 'age', 'phone', 'actions'];
+  displayedColumns: string[] = ['id', 'name', 'position', 'domain', 'accessLevel', 'actions'];
   data: User[] = [];
   constructor(
     private usersService: UsersService,

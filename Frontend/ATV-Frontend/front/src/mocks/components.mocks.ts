@@ -5,7 +5,7 @@ import {
   ApexNonAxisChartSeries,
 } from 'ng-apexcharts';
 import { ApexChartAttributes } from 'src/app/model/chart/chart.model';
-import { BasicUser, User } from 'src/app/model/http/users.model';
+import { BasicUser, User } from 'src/app/model/http/user.model';
 
 @Component({ selector: 'app-users-form', template: '', standalone: true })
 export class MockUsersFormComponent {

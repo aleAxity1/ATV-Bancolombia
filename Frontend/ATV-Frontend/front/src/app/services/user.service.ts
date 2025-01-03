@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Endpoints } from 'src/environments/endpoints';
-import { BasicUser, User } from '../model/http/users.model';
+import { BasicUser, User } from '../model/http/user.model';
 import { ConsumeService } from './consume.service';
 import { Observable } from 'rxjs';
 
@@ -13,7 +13,7 @@ export class UsersService {
   getUsers(): Observable<User[]> {
     return this.consumeService.httpGet<User[]>(Endpoints.users.users);
   }
-  getUserById(id: number): Observable<User> {
+  getUserById(id: string): Observable<User> {
     return this.consumeService.httpGet<User>(`${Endpoints.users.users}/${id}`);
   }
   createUser(user: BasicUser): Observable<User> {

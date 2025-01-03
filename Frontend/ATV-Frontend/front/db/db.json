@@ -2,9 +2,12 @@
   "users": [
     {
       "id": 1,
-      "name": "Jon Doe",
-      "age": "25",
-      "phone": "5522114546"
+      "xuname": "Jon Doe",
+      "xucarg": "1",
+      "xuarea": "1",
+      "xuacce": "1",
+      "xudom": "1",
+      "xuusrt": 0
     }
   ]
 }
