@@ -1,70 +1,41 @@
 package com.axity.office.facade.impl;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import com.axity.office.commons.dto.UserDto;
-import com.axity.office.commons.request.PaginatedRequestDto;
-import com.axity.office.commons.response.GenericResponseDto;
-import com.axity.office.commons.response.PaginatedResponseDto;
+import com.axity.office.commons.dto.UserDTO;
 import com.axity.office.facade.UserFacade;
 import com.axity.office.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-/**
- * Class UserFacadeImpl
- * @author username@axity.com
- */
-@Service
-@Transactional
-public class UserFacadeImpl implements UserFacade
-{
-  @Autowired
-  private UserService userService;
-  /**
-   * {@inheritDoc}
-   */
-  @Override
-  public PaginatedResponseDto<UserDto> findUsers( PaginatedRequestDto request )
-  {
-    return this.userService.findUsers( request );
-  }
+import java.util.List;
 
-  /**
-   * {@inheritDoc}
-   */
-  @Override
-  public GenericResponseDto<UserDto> find( Integer id )
-  {
-    return this.userService.find( id );
-  }
+@Component
+public class UserFacadeImpl implements UserFacade {
 
-  /**
-   * {@inheritDoc}
-   */
-  @Override
-  public GenericResponseDto<UserDto> create( UserDto dto )
-  {
-    return this.userService.create( dto );
-  }
+    @Autowired
+    private UserService userService;
 
-  /**
-   * {@inheritDoc}
-   */
-  @Override
-  public GenericResponseDto<Boolean> update( UserDto dto )
-  {
-    return this.userService.update( dto );
-  }
+    @Override
+    public UserDTO createUser(UserDTO userDTO) {
+        return userService.createUser(userDTO);
+    }
 
-  /**
-   * {@inheritDoc}
-   */
-  @Override
-  public GenericResponseDto<Boolean> delete( Integer id )
-  {
-    return this.userService.delete( id );
-  }
+    @Override
+    public List<UserDTO> getAllUsers() {
+        return userService.getAllUsers();
+    }
+
+    @Override
+    public UserDTO getUserById(String id) {
+        return userService.getUserById(id);
+    }
+
+    @Override
+    public UserDTO updateUser(String id, UserDTO userDTO) {
+        return userService.updateUser(id, userDTO);
+    }
+
+    @Override
+    public void deleteUser(String id) {
+        userService.deleteUser(id);
+    }
 }
