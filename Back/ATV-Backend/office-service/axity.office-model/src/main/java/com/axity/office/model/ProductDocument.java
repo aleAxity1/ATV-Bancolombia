@@ -12,10 +12,12 @@ import jakarta.persistence.*;
 public class ProductDocument {
 
     @Id
+    @Column(name = "XPCOPDO", length = 2, nullable = false)
+    private String xpcopdo;
+
     @Column(name = "XPCOPR", length = 2, nullable = false)
     private String xpcopr;
 
-    @Id
     @Column(name = "XPCODO", length = 3, nullable = false)
     private String xpcodo;
 
