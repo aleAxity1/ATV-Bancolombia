@@ -12,8 +12,9 @@ import jakarta.persistence.*;
 public class ProductDocument {
 
     @Id
-    @Column(name = "XPCOPDO", length = 2, nullable = false)
-    private String xpcopdo;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "XPCOPDO")
+    private Long xpcopdo;
 
     @Column(name = "XPCOPR", length = 2, nullable = false)
     private String xpcopr;
