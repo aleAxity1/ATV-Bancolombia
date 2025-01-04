@@ -26,7 +26,7 @@ public class ProductByUserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ProductByUserDTO> getProductByUserById(@PathVariable String id) {
+    public ResponseEntity<ProductByUserDTO> getProductByUserById(@PathVariable Long id) {
         return ResponseEntity.ok(productByUserFacade.getProductByUserById(id));
     }
 
@@ -36,7 +36,7 @@ public class ProductByUserController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteProductByUser(@PathVariable String id) {
+    public ResponseEntity<Void> deleteProductByUser(@PathVariable Long id) {
         productByUserFacade.deleteProductByUser(id);
         return ResponseEntity.noContent().build();
     }

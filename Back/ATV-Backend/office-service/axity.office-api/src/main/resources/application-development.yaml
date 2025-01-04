@@ -19,10 +19,10 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres_db
+    url: jdbc:postgresql://localhost:5432/atv_db
     driver-class-name: org.postgresql.Driver
-    username: postgres_user
-    password: postgres_password
+    username: postgres
+    password: 1234
 
 
 

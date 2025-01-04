@@ -26,7 +26,7 @@ public class BranchByUserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<BranchByUserDTO> read(@PathVariable String id) {
+    public ResponseEntity<BranchByUserDTO> read(@PathVariable Long id) {
         return ResponseEntity.ok(branchByUserFacade.read(id));
     }
 
@@ -36,7 +36,7 @@ public class BranchByUserController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable String id) {
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
         branchByUserFacade.delete(id);
         return ResponseEntity.ok().build();
     }

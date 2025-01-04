@@ -25,7 +25,7 @@ public class ProductByUserFacadeImpl implements ProductByUserFacade {
     }
 
     @Override
-    public ProductByUserDTO getProductByUserById(String id) {
+    public ProductByUserDTO getProductByUserById(Long id) {
         return productByUserService.getProductByUserById(id);
     }
 
@@ -35,7 +35,7 @@ public class ProductByUserFacadeImpl implements ProductByUserFacade {
     }
 
     @Override
-    public void deleteProductByUser(String id) {
+    public void deleteProductByUser(Long id) {
         productByUserService.deleteProductByUser(id);
     }
 }

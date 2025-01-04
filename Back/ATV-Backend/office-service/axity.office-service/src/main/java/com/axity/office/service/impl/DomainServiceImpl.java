@@ -19,7 +19,7 @@ public class DomainServiceImpl implements DomainService {
     @Override
     public DomainDTO createDomain(DomainDTO domainDTO) {
         Domain domain = new Domain();
-        domain.setXddom(domainDTO.getXddom());
+        domain.setXdid(domainDTO.getXdid());
         domain.setXdname(domainDTO.getXdname());
         domain = domainRepository.save(domain);
         return convertToDTO(domain);
@@ -50,7 +50,7 @@ public class DomainServiceImpl implements DomainService {
 
     private DomainDTO convertToDTO(Domain domain) {
         DomainDTO domainDTO = new DomainDTO();
-        domainDTO.setXddom(domain.getXddom());
+        domainDTO.setXdid(domain.getXdid());
         domainDTO.setXdname(domain.getXdname());
         return domainDTO;
     }

@@ -7,6 +7,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class DomainDTO {
-    private String xddom;
+    private String xdid;
     private String xdname;
 }

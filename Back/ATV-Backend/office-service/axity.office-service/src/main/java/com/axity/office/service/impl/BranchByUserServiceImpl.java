@@ -36,10 +36,11 @@ public class BranchByUserServiceImpl implements BranchByUserService {
     }
 
     @Override
-    public BranchByUserDTO read(String id) {
+    public BranchByUserDTO read(Long id) {
         BranchByUser branchByUser = branchByUserRepository.findById(id).orElse(null);
         if (branchByUser == null) return null;
         BranchByUserDTO dto = new BranchByUserDTO();
+        dto.setXsid(branchByUser.getXsid());
         dto.setXsuser(branchByUser.getXsuser());
         dto.setXscosu(branchByUser.getXscosu());
         return dto;
@@ -47,15 +48,16 @@ public class BranchByUserServiceImpl implements BranchByUserService {
 
     @Override
     public BranchByUserDTO update(BranchByUserDTO branchByUserDTO) {
-        BranchByUser branchByUser = branchByUserRepository.findById(branchByUserDTO.getXsuser()).orElse(null);
+        BranchByUser branchByUser = branchByUserRepository.findById(branchByUserDTO.getXsid()).orElse(null);
         if (branchByUser == null) return null;
+        branchByUser.setXsuser(branchByUserDTO.getXsuser());
         branchByUser.setXscosu(branchByUserDTO.getXscosu());
         branchByUserRepository.save(branchByUser);
         return branchByUserDTO;
     }
 
     @Override
-    public void delete(String id) {
+    public void delete(Long id) {
         branchByUserRepository.deleteById(id);
     }
 }

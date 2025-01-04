@@ -13,8 +13,8 @@ public class ProductDocument {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "XPCOPDO")
-    private Long xpcopdo;
+    @Column(name = "XPID")
+    private Long xpid;
 
     @Column(name = "XPCOPR", length = 2, nullable = false)
     private String xpcopr;

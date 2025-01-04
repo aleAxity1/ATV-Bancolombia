@@ -22,13 +22,14 @@ public class ProductByUserServiceImpl implements ProductByUserService {
         productByUser.setXpuser(productByUserDTO.getXpuser());
         productByUser.setXpcopr(productByUserDTO.getXpcopr());
         productByUserRepository.save(productByUser);
-        return productByUserDTO;
+        return productByUserDTO; 
     }
 
     @Override
     public List<ProductByUserDTO> getAllProductByUsers() {
         return productByUserRepository.findAll().stream().map(productByUser -> {
             ProductByUserDTO dto = new ProductByUserDTO();
+            dto.setXpid(productByUser.getXpid());
             dto.setXpuser(productByUser.getXpuser());
             dto.setXpcopr(productByUser.getXpcopr());
             return dto;
@@ -36,9 +37,10 @@ public class ProductByUserServiceImpl implements ProductByUserService {
     }
 
     @Override
-    public ProductByUserDTO getProductByUserById(String id) {
+    public ProductByUserDTO getProductByUserById(Long id) {
         return productByUserRepository.findById(id).map(productByUser -> {
             ProductByUserDTO dto = new ProductByUserDTO();
+            dto.setXpid(productByUser.getXpid());
             dto.setXpuser(productByUser.getXpuser());
             dto.setXpcopr(productByUser.getXpcopr());
             return dto;
@@ -47,8 +49,9 @@ public class ProductByUserServiceImpl implements ProductByUserService {
 
     @Override
     public ProductByUserDTO updateProductByUser(ProductByUserDTO productByUserDTO) {
-        ProductByUser productByUser = productByUserRepository.findById(productByUserDTO.getXpuser()).orElse(null);
+        ProductByUser productByUser = productByUserRepository.findById(productByUserDTO.getXpid()).orElse(null);
         if (productByUser != null) {
+            productByUser.setXpuser(productByUserDTO.getXpuser());
             productByUser.setXpcopr(productByUserDTO.getXpcopr());
             productByUserRepository.save(productByUser);
         }
@@ -56,7 +59,7 @@ public class ProductByUserServiceImpl implements ProductByUserService {
     }
 
     @Override
-    public void deleteProductByUser(String id) {
+    public void deleteProductByUser(Long id) {
         productByUserRepository.deleteById(id);
     }
 }

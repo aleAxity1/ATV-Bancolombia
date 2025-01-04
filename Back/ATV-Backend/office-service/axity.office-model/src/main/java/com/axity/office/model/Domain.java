@@ -12,8 +12,8 @@ import jakarta.persistence.*;
 public class Domain {
 
     @Id
-    @Column(name = "XDDOM", length = 2, nullable = false)
-    private String xddom;
+    @Column(name = "XDID", length = 2, nullable = false)
+    private String xdid;
 
     @Column(name = "XDNAME", length = 60)
     private String xdname;

@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class AccessByUserDTO {
-    private int xacoac;
+public class AccessDTO {
+    private int xaid;
     private String xaname;
 }

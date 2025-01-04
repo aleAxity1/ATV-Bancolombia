@@ -25,7 +25,7 @@ public class BranchByUserFacadeImpl implements BranchByUserFacade {
     }
 
     @Override
-    public BranchByUserDTO read(String id) {
+    public BranchByUserDTO read(Long id) {
         return branchByUserService.read(id);
     }
 
@@ -35,7 +35,7 @@ public class BranchByUserFacadeImpl implements BranchByUserFacade {
     }
 
     @Override
-    public void delete(String id) {
+    public void delete(Long id) {
         branchByUserService.delete(id);
     }
 }

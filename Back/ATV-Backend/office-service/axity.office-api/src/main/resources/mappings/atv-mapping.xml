@@ -30,6 +30,10 @@
     <mapping>
         <class-a>com.axity.office.commons.dto.BranchByUserDTO</class-a>
         <class-b>com.axity.office.model.BranchByUser</class-b>
+         <field>
+            <a>xsid</a>
+            <b>xsid</b>
+        </field>
         <field>
             <a>xsuser</a>
             <b>xsuser</b>
@@ -42,6 +46,10 @@
     <mapping>
         <class-a>com.axity.office.commons.dto.ProductByUserDTO</class-a>
         <class-b>com.axity.office.model.ProductByUser</class-b>
+          <field>
+            <a>xpid</a>
+            <b>xpid</b>
+        </field>
         <field>
             <a>xpuser</a>
             <b>xpuser</b>
@@ -52,11 +60,11 @@
         </field>
     </mapping>
     <mapping>
-        <class-a>com.axity.office.commons.dto.AccessByUserDTO</class-a>
-        <class-b>com.axity.office.model.AccessByUser</class-b>
+        <class-a>com.axity.office.commons.dto.AccessDTO</class-a>
+        <class-b>com.axity.office.model.Access</class-b>
         <field>
-            <a>xacoac</a>
-            <b>xacoac</b>
+            <a>xaid</a>
+            <b>xaid</b>
         </field>
         <field>
             <a>xaname</a>
@@ -66,6 +74,10 @@
     <mapping>
         <class-a>com.axity.office.commons.dto.ProductDocumentDTO</class-a>
         <class-b>com.axity.office.model.ProductDocument</class-b>
+           <field>
+            <a>xpid</a>
+            <b>xpid</b>
+        </field>
         <field>
             <a>xpcopr</a>
             <b>xpcopr</b>
@@ -187,8 +199,8 @@
         <class-a>com.axity.office.commons.dto.DomainDTO</class-a>
         <class-b>com.axity.office.model.Domain</class-b>
         <field>
-            <a>xddom</a>
-            <b>xddom</b>
+            <a>xdid</a>
+            <b>xdid</b>
         </field>
         <field>
             <a>xdname</a>
