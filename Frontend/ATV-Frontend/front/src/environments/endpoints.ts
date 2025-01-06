@@ -9,6 +9,7 @@ export const Endpoints = {
   },
   users: {
     users: `${environment.usersURL}/users`,
+    // http://localhost:9090 + /users -> http://localhost:9090/users
   },
 };
 
