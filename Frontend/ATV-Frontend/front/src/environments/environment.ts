@@ -5,13 +5,13 @@
 import { LoggerStrategies } from 'src/app/constants/logger';
 
 const keycloak = {
-  url: 'https://keycloak.axity.com',
-  realm: 'swd',
-  clientId: 'angular',
+  url: 'https://keycloak.axitycolombia.com/',
+  realm: 'atv',
+  clientId: 'atv_frontend',
 };
 
 const sse = {
-  url: 'http://localhost:9220',
+  url: 'http://localhost:9090',
   retryInterval: 5000,
   maxRetries: 10,
 };

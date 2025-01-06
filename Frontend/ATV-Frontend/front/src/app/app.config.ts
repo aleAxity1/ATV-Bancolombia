@@ -74,6 +74,8 @@ export const appConfig: ApplicationConfig = {
 function initializeKeycloak(keycloak: KeycloakService): () => Promise<boolean> {
   return () =>
     keycloak.init({
+      enableBearerInterceptor: true,
+      bearerPrefix: 'Bearer',
       config: {
         url: environment.keycloak.url,
         realm: environment.keycloak.realm,

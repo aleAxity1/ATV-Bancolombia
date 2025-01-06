@@ -24,8 +24,15 @@ spring:
     username: postgres
     password: 1234
 
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://keycloak.axitycolombia.com/realms/atv
 
-
-    
+token:
+  converter:
+    principal-attribute: preferred_username
+    resource-id: atv_backend
 
 

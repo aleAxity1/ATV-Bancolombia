@@ -3,7 +3,9 @@ package com.axity.office.controller;
 import com.axity.office.commons.dto.UserDTO;
 import com.axity.office.facade.UserFacade;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,6 +30,13 @@ public class UserController {
     @GetMapping("/{id}")
     public ResponseEntity<UserDTO> getUserById(@PathVariable String id) {
         return ResponseEntity.ok(userFacade.getUserById(id));
+    }
+
+    @GetMapping("/test/{id}")
+    public ResponseEntity<String> getUserTestById(@PathVariable String id, Authentication authentication) {
+        JwtAuthenticationToken jwtToken = (JwtAuthenticationToken) authentication;
+        String preferredUsername = jwtToken.getToken().getClaimAsString("preferred_username");
+        return ResponseEntity.ok("Hola " + preferredUsername + " con id: " + id);
     }
 
     @PutMapping("/{id}")
