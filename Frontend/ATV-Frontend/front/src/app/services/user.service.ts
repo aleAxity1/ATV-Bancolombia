@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UsersService {
-  constructor(private consumeService: ConsumeService) {}
+  constructor(private readonly consumeService: ConsumeService) { }
 
   getUsers(): Observable<User[]> {
     return this.consumeService.httpGet<User[]>(Endpoints.users.users);

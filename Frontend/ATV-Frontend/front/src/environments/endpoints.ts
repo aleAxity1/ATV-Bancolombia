@@ -8,8 +8,17 @@ export const Endpoints = {
     colors: `${environment.baseUrl}/unknown`,
   },
   users: {
-    users: `${environment.usersURL}/users`,
+    users: `${environment.baseUrl}/users`,
     // http://localhost:9090 + /users -> http://localhost:9090/users
+  },
+  positions: {
+    positions: `${environment.baseUrl}/positions`,
+  },
+  domains: {
+    domains: `${environment.baseUrl}/domains`,
+  },
+  access: {
+    access: `${environment.baseUrl}/access`,
   },
 };
 

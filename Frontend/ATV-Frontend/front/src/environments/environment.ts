@@ -30,7 +30,7 @@ export const environment = {
   },
   production: false,
   theme: 'default-theme',
-  baseUrl: 'https://reqres.in/api',
+  baseUrl: 'http://localhost:9090',
   usersURL: 'http://localhost:9090',
   keycloak,
   sse,
