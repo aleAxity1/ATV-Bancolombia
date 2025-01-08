@@ -1,4 +1,5 @@
 export class BasicUser {
+  xuuser: string; // IDENTIFICADOR DEL USUARIO
   xuname: string; // NOMBRE DE U
   xucarg: number; // CARGO DEL U
   xuarea: number; // AREA DEL USU
@@ -7,6 +8,7 @@ export class BasicUser {
   xuusrt: number; // TIPO DE USU
 
   constructor() {
+    this.xuuser = '';
     this.xuname = '';
     this.xucarg = 0;
     this.xuarea = 0;
@@ -17,7 +19,8 @@ export class BasicUser {
 }
 
 export class User extends BasicUser {
-  id : number;
+  id: number;
+
   constructor() {
     super();
     this.id = 0;

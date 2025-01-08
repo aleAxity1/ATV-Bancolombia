@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -23,8 +24,23 @@ public class UserController {
     }
 
     @GetMapping
-    public ResponseEntity<List<UserDTO>> getAllUsers() {
-        return ResponseEntity.ok(userFacade.getAllUsers());
+    public ResponseEntity<List<UserDTO>> getAllUsers(Authentication authentication) {
+        JwtAuthenticationToken jwtToken = (JwtAuthenticationToken) authentication;
+        String preferredUsername = jwtToken.getToken().getClaimAsString("preferred_username");
+
+        UserDTO user = new UserDTO();
+        user.setXuuser(preferredUsername);
+        user.setXuname("Nombre de usuario");
+        user.setXucarg("001");
+        user.setXuacce((short)1);
+        user.setXudom("01");
+        user.setXuusrt((short)1);
+
+        List<UserDTO> users = new ArrayList<UserDTO>();
+        users.add(user);
+
+        return ResponseEntity.ok(users);
+        // return ResponseEntity.ok(userFacade.getAllUsers());
     }
 
     @GetMapping("/{id}")
