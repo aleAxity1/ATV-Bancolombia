@@ -25,9 +25,14 @@ public class BranchByUserController {
         return ResponseEntity.ok(branchByUserFacade.readAll());
     }
 
-    @GetMapping("/{id}")
+    /*@GetMapping("/{id}")
     public ResponseEntity<BranchByUserDTO> read(@PathVariable Long id) {
         return ResponseEntity.ok(branchByUserFacade.read(id));
+    }*/
+
+    @GetMapping("/{id}")
+    public ResponseEntity<List<BranchByUserDTO>> read(@PathVariable String id) {
+        return ResponseEntity.ok(branchByUserFacade.findAllByUser(id));
     }
 
     @PutMapping

@@ -19,7 +19,7 @@ public class UserController {
     private UserFacade userFacade;
 
     @PostMapping
-    public ResponseEntity<UserDTO> createUser(@RequestBody UserDTO userDTO) {
+    public ResponseEntity<UserDTO> createUser(@RequestBody UserDTO userDTO, Authentication authentication) {
         return ResponseEntity.ok(userFacade.createUser(userDTO));
     }
 
@@ -27,32 +27,12 @@ public class UserController {
     public ResponseEntity<List<UserDTO>> getAllUsers(Authentication authentication) {
         JwtAuthenticationToken jwtToken = (JwtAuthenticationToken) authentication;
         String preferredUsername = jwtToken.getToken().getClaimAsString("preferred_username");
-
-        UserDTO user = new UserDTO();
-        user.setXuuser(preferredUsername);
-        user.setXuname("Nombre de usuario");
-        user.setXucarg("001");
-        user.setXuacce((short)1);
-        user.setXudom("01");
-        user.setXuusrt((short)1);
-
-        List<UserDTO> users = new ArrayList<UserDTO>();
-        users.add(user);
-
-        return ResponseEntity.ok(users);
-        // return ResponseEntity.ok(userFacade.getAllUsers());
+        return ResponseEntity.ok(userFacade.getAllUsers());
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<UserDTO> getUserById(@PathVariable String id) {
         return ResponseEntity.ok(userFacade.getUserById(id));
-    }
-
-    @GetMapping("/test/{id}")
-    public ResponseEntity<String> getUserTestById(@PathVariable String id, Authentication authentication) {
-        JwtAuthenticationToken jwtToken = (JwtAuthenticationToken) authentication;
-        String preferredUsername = jwtToken.getToken().getClaimAsString("preferred_username");
-        return ResponseEntity.ok("Hola " + preferredUsername + " con id: " + id);
     }
 
     @PutMapping("/{id}")

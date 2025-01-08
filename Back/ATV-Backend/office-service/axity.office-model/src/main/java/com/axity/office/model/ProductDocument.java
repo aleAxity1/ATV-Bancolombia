@@ -1,9 +1,11 @@
 package com.axity.office.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-
-import jakarta.persistence.*;
 
 @Getter
 @Setter
@@ -12,14 +14,13 @@ import jakarta.persistence.*;
 public class ProductDocument {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "XPID")
+    @Column(name = "XPID", nullable = false)
     private Long xpid;
 
-    @Column(name = "XPCOPR", length = 2, nullable = false)
+    @Column(name = "XPCOPR", nullable = false, length = 2)
     private String xpcopr;
 
-    @Column(name = "XPCODO", length = 3, nullable = false)
+    @Column(name = "XPCODO", nullable = false, length = 3)
     private String xpcodo;
 
     @Column(name = "XPDSDO", length = 25)

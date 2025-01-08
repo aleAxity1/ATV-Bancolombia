@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/productdocument")
+@RequestMapping("/productdocument")
 public class ProductDocumentController {
 
     @Autowired
@@ -26,7 +26,7 @@ public class ProductDocumentController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ProductDocumentDTO> getProductDocumentById(@PathVariable String id) {
+    public ResponseEntity<ProductDocumentDTO> getProductDocumentById(@PathVariable Integer id) {
         return ResponseEntity.ok(productDocumentFacade.getProductDocumentById(id));
     }
 
@@ -36,7 +36,7 @@ public class ProductDocumentController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteProductDocument(@PathVariable String id) {
+    public ResponseEntity<Void> deleteProductDocument(@PathVariable Integer id) {
         productDocumentFacade.deleteProductDocument(id);
         return ResponseEntity.noContent().build();
     }

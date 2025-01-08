@@ -60,4 +60,14 @@ public class BranchByUserServiceImpl implements BranchByUserService {
     public void delete(Long id) {
         branchByUserRepository.deleteById(id);
     }
+
+    @Override
+    public List<BranchByUserDTO> findAllByUser(String user) {
+        return branchByUserRepository.findAllByUser(user).stream().map(branchByUser -> {
+            BranchByUserDTO dto = new BranchByUserDTO();
+            dto.setXsuser(branchByUser.getXsuser());
+            dto.setXscosu(branchByUser.getXscosu());
+            return dto;
+        }).collect(Collectors.toList());
+    }
 }

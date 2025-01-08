@@ -25,7 +25,7 @@ public class ProductDocumentFacadeImpl implements ProductDocumentFacade {
     }
 
     @Override
-    public ProductDocumentDTO getProductDocumentById(String id) {
+    public ProductDocumentDTO getProductDocumentById(Integer id) {
         return productDocumentService.getProductDocumentById(id);
     }
 
@@ -35,7 +35,7 @@ public class ProductDocumentFacadeImpl implements ProductDocumentFacade {
     }
 
     @Override
-    public void deleteProductDocument(String id) {
+    public void deleteProductDocument(Integer id) {
         productDocumentService.deleteProductDocument(id);
     }
 }

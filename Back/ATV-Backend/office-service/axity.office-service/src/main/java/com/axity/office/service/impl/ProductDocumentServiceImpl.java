@@ -39,13 +39,13 @@ public class ProductDocumentServiceImpl implements ProductDocumentService {
     }
 
     @Override
-    public ProductDocumentDTO getProductDocumentById(String id) {
+    public ProductDocumentDTO getProductDocumentById(Integer id) {
         return productDocumentRepository.findById(id).map(this::mapToDTO).orElse(null);
     }
 
     @Override
     public ProductDocumentDTO updateProductDocument(ProductDocumentDTO productDocumentDTO) {
-        ProductDocument productDocument = productDocumentRepository.findById(productDocumentDTO.getXpcopr()).orElse(null);
+        ProductDocument productDocument = productDocumentRepository.findById(productDocumentDTO.getXpid()).orElse(null);
         if (productDocument != null) {
             // Update fields
             productDocument.setXpdsdo(productDocumentDTO.getXpdsdo());
@@ -59,7 +59,7 @@ public class ProductDocumentServiceImpl implements ProductDocumentService {
     }
 
     @Override
-    public void deleteProductDocument(String id) {
+    public void deleteProductDocument(Integer id) {
         productDocumentRepository.deleteById(id);
     }
 

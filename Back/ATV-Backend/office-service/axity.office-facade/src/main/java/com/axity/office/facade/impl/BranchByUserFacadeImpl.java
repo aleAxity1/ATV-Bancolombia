@@ -38,4 +38,9 @@ public class BranchByUserFacadeImpl implements BranchByUserFacade {
     public void delete(Long id) {
         branchByUserService.delete(id);
     }
+
+    @Override
+    public List<BranchByUserDTO> findAllByUser(String user) {
+        return branchByUserService.findAllByUser(user);
+    }
 }

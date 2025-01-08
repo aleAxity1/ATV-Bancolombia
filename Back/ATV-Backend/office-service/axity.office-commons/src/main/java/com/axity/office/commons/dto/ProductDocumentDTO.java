@@ -6,7 +6,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ProductDocumentDTO {
-    private Long xpid;
+    private Integer xpid;
     private String xpcopr;
     private String xpcodo;
     private String xpdsdo;
