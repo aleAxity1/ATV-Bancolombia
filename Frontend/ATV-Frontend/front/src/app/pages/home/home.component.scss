@@ -1,20 +1,45 @@
 .menu-custom-button {
-    width: 100px;
-    height: 50px;
-    border-radius: 0;
-    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
-    margin-bottom: 10px;
-    padding: 6rem;
+  width: 219px;
+  height: 219px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+  font-family: var(--primaryFont);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  text-align: center;
+  color: var(--primaryColor);
+}
+
+.container .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container .col-md-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+  padding: 10px;
+}
+
+/* Home Efectos */
+.box-menu {
+  animation: show-menu 1.5s alternate;
+  animation-fill-mode: forwards;
+}
+
+.box-menu > div :hover {
+  transform: scale(90%);
+}
+
+/* Efecto de aparecer de izquierda a derecha */
+@keyframes show-menu {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
   }
-  
-  .container .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
-  
-  .container .col-md-3 {
-    flex: 0 0 25%;
-    max-width: 25%;
-    padding: 10px;
-  }  
+}
