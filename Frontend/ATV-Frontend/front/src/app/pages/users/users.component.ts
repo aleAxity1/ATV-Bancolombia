@@ -17,6 +17,8 @@ import {
 } from '@angular/material/table';
 import { RouterLink } from '@angular/router';
 import { MatButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-users',
@@ -36,7 +38,9 @@ import { MatButton } from '@angular/material/button';
     MatHeaderRow,
     MatRowDef,
     MatRow,
+    MatIcon,
     TranslateModule,
+    CommonModule
   ],
 })
 export class UsersComponent implements OnInit {

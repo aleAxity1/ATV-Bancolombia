@@ -1,0 +1,14 @@
+<div class="d-flex justify-content-center">
+    <div class="checkbox-container">
+        <h2>Asignar Sucursales</h2>
+        <mat-selection-list [(ngModel)]="selectedItems">
+            <mat-list-option *ngFor="let item of items" [value]="item">
+                {{ item }}
+            </mat-list-option>
+        </mat-selection-list>
+    
+        <button mat-raised-button color="primary" (click)="submitSelection()">
+            Guardar
+        </button>
+    </div>
+</div>

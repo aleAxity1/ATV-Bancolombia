@@ -1,5 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./styles/theme.scss";
+:root{
+  --firstColor: #FDDA24;
+  --secondColor: #2C2A29;
+  --thirdColor:#F7F7F7;
+  --fourthColor: #FFFFFF;
+  --fifthColor: #FF7F41;
+  --sixthColor: #9062CE;
+  --seventhColor: #F4B6CD;
+  --eighthColor: #58CAE7;
+  --ninthColor: #00C389;
+}
 
 html,
 body {
@@ -8,6 +19,7 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--thirdColor);
 }
 
 app-root {
@@ -15,6 +27,11 @@ app-root {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
+}
+
+.dark-color{
+  background-color: var(--secondColor) !important;
+  color: var(--thirdColor) !important;
 }
 
 .text-left {

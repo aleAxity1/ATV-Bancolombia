@@ -47,6 +47,14 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'assign-area/:id',
+    canActivate: [GuardService],
+    loadComponent: () =>
+      import('./pages/assign-user-area/assign-user-area.component').then(
+        (m) => m.AssignUserAreaComponent
+      ),
+  },
+  {
     path: 'create',
     canActivate: [GuardService],
     loadComponent: () =>
