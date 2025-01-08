@@ -9,4 +9,5 @@ public class ProductByUserDTO {
     private Long xpid;
     private String xpuser;
     private String xpcopr;
+    private String xsnmpr;
 }

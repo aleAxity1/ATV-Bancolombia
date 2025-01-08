@@ -12,4 +12,5 @@ public interface BranchByUserService {
     BranchByUserDTO update(BranchByUserDTO branchByUserDTO);
     void delete(Long id);
     List<BranchByUserDTO> findAllByUser(String user);
+    List<BranchByUserDTO> updateByUser(String userId, List<Short> branches);
 }

@@ -40,7 +40,12 @@ public class BranchByUserFacadeImpl implements BranchByUserFacade {
     }
 
     @Override
-    public List<BranchByUserDTO> findAllByUser(String user) {
-        return branchByUserService.findAllByUser(user);
+    public List<BranchByUserDTO> findAllByUser(String userId) {
+        return branchByUserService.findAllByUser(userId);
+    }
+
+    @Override
+    public List<BranchByUserDTO> updateByUser(String userId, List<Short> branches) {
+        return branchByUserService.updateByUser(userId, branches);
     }
 }

@@ -30,14 +30,14 @@ public class BranchByUserController {
         return ResponseEntity.ok(branchByUserFacade.read(id));
     }*/
 
-    @GetMapping("/{id}")
-    public ResponseEntity<List<BranchByUserDTO>> read(@PathVariable String id) {
-        return ResponseEntity.ok(branchByUserFacade.findAllByUser(id));
+    @GetMapping("/{userId}")
+    public ResponseEntity<List<BranchByUserDTO>> read(@PathVariable String userId) {
+        return ResponseEntity.ok(branchByUserFacade.findAllByUser(userId));
     }
 
-    @PutMapping
-    public ResponseEntity<BranchByUserDTO> update(@RequestBody BranchByUserDTO branchByUserDTO) {
-        return ResponseEntity.ok(branchByUserFacade.update(branchByUserDTO));
+    @PutMapping("/{userId}")
+    public ResponseEntity<List<BranchByUserDTO>> update(@PathVariable String userId, @RequestBody List<Short> branches) {
+        return ResponseEntity.ok(branchByUserFacade.updateByUser(userId, branches));
     }
 
     @DeleteMapping("/{id}")

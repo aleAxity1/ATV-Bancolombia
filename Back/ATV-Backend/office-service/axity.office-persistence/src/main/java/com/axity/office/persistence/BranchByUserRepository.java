@@ -13,7 +13,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BranchByUserRepository extends JpaRepository<BranchByUser, Long> {
 
-    @Query("SELECT u FROM BranchByUser u WHERE u.xsuser = :user ORDER BY u.xsid ASC NULLS LAST")
-    List<BranchByUser> findAllByUser(@Param("user") String user);
+    @Query("SELECT u FROM BranchByUser u WHERE u.xsuser = :userId ORDER BY u.xsid ASC NULLS LAST")
+    List<BranchByUser> findAllByUser(@Param("userId") String userId);
 
+    @Query("DELETE FROM BranchByUser u WHERE u.xsuser = :userId AND u.xscosu = :branchId")
+    void deleteByUserAndBranch(@Param("userId") String userId, @Param("branchId") Short branchId);
 }

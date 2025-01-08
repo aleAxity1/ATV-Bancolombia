@@ -10,5 +10,6 @@ public interface BranchByUserFacade {
     BranchByUserDTO read(Long id);
     BranchByUserDTO update(BranchByUserDTO branchByUserDTO);
     void delete(Long id);
-    List<BranchByUserDTO> findAllByUser(String user);
+    List<BranchByUserDTO> findAllByUser(String userId);
+    List<BranchByUserDTO> updateByUser(String userId, List<Short> branches);
 }
