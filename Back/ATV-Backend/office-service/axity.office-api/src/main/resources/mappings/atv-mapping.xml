@@ -207,4 +207,48 @@
             <b>xdname</b>
         </field>
     </mapping>
+    <mapping>
+        <class-a>com.axity.office.commons.dto.FrequencyDto</class-a>
+        <class-b>com.axity.office.model.Frequency</class-b>
+        <field>
+            <a>fxid</a>
+            <b>fxid</b>
+        </field>
+        <field>
+            <a>fxcopr</a>
+            <b>fxcopr</b>
+        </field>
+        <field>
+            <a>fxcodo</a>
+            <b>fxcodo</b>
+        </field>
+        <field>
+            <a>fxfrar</a>
+            <b>fxfrar</b>
+        </field>
+        <field>
+            <a>fxdifr</a>
+            <b>fxdifr</b>
+        </field>
+    </mapping>
+    <mapping>
+        <class-a>com.axity.office.commons.dto.ProductDocumentByBranchDto</class-a>
+        <class-b>com.axity.office.model.ProductDocumentByBranch</class-b>
+        <field>
+            <a>xsid</a>
+            <b>xsid</b>
+        </field>
+        <field>
+            <a>xscosu</a>
+            <b>xscosu</b>
+        </field>
+        <field>
+            <a>xscopr</a>
+            <b>xscopr</b>
+        </field>
+        <field>
+            <a>xscodo</a>
+            <b>xscodo</b>
+        </field>
+    </mapping>
 </mappings>
