@@ -4,6 +4,7 @@ import { BasicUser, User } from '../model/http/user.model';
 import { ConsumeService } from './consume.service';
 import { Observable } from 'rxjs';
 import { BranchByUser } from '../model/http/branchByUser.model';
+import { ProductByUser } from '../model/http/productsByUser.model';
 
 @Injectable({
   providedIn: 'root',
@@ -40,6 +41,17 @@ export class UsersService {
     return this.consumeService.httpPut<BranchByUser[]>(
       `${Endpoints.users.userByBranch}/${id}`,
       branches
+    );
+  }
+
+  getProductByUser(id: string): Observable<ProductByUser[]> {
+    return this.consumeService.httpGet<ProductByUser[]>(`${Endpoints.users.usersByProduct}/${id}`);
+  }
+
+  updateProductByUser(id: string, product: string[]): Observable<ProductByUser[]> {
+    return this.consumeService.httpPut<ProductByUser[]>(
+      `${Endpoints.users.usersByProduct}/${id}`,
+      product
     );
   }
 }

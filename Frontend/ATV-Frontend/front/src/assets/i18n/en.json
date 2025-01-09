@@ -37,8 +37,8 @@
     },
     "create": "Create user"
   },
-  "colors": {
-    "title": "Colors",
+  "products": {
+    "title": "Products & Frecuencies",
     "columns": {
       "name": "Name",
       "year": "Year",
@@ -46,7 +46,10 @@
       "pantone": "Pantone"
     }
   },
-  "dashboard": {
-    "title": "Dashboard"
+  "queries": {
+    "title": "Queries"
+  },
+  "FollowUps": {
+    "title": "Follow-ups"
   }
 }

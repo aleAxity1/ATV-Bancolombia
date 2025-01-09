@@ -2,11 +2,10 @@
     <div class="checkbox-container">
         <h2>Asignar Productos</h2>
         <mat-selection-list [(ngModel)]="selectedItems">
-            <mat-list-option *ngFor="let product of products" [value]="product.xpid">
+            <mat-list-option *ngFor="let product of products" [value]="product.xpcopr">
                 {{ product.xpdsdo }}
             </mat-list-option>
         </mat-selection-list>
-    
         <button mat-raised-button color="primary" (click)="submitSelection()">
             Guardar
         </button>

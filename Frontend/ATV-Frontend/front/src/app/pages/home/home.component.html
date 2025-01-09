@@ -9,18 +9,18 @@
 
     <div class="col-md-3 text-center">
       <button class="menu-custom-button" mat-raised-button color="primary" [routerLink]="['/colors']" disabled>
-        Frecuencia Productos
+        {{ "products.title" | translate }}
       </button>
     </div>
     <div class="col-md-3 text-center">
       <button class="menu-custom-button" mat-raised-button color="primary" [routerLink]="['/events']" disabled>
-        Consultas
+        {{ "queries.title" | translate }}
       </button>
     </div>
     
     <div class="col-md-3 text-center">
       <button class="menu-custom-button" mat-raised-button color="primary" [routerLink]="['/dashboard']" disabled>
-        Seguimiento
+        {{ "FollowUps.title" | translate }}
       </button>
     </div>
   </div>

@@ -21,8 +21,8 @@ export class HomeComponent implements OnInit{
 
   ngOnInit(): void {
     this.initService.loadInitialData().subscribe({
-      next: (response) => {
-        console.log(response);
+      next: () => {
+        this.dataService.setGeneralNotificationMessage(`¡Bienvenido!`);
       },
       error: (error) => this.dataService.setGeneralNotificationMessage(error),
     })
