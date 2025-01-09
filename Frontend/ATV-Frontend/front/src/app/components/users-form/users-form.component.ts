@@ -2,10 +2,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { BasicUser, User } from 'src/app/model/http/user.model';
 import { MatButton } from '@angular/material/button';
-import { NgIf } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { MatInput } from '@angular/material/input';
 import { MatFormField, MatLabel, MatError } from '@angular/material/form-field';
 import { MatOption, MatSelect } from '@angular/material/select';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { Position } from 'src/app/model/http/position.model';
+import { Access } from 'src/app/model/http/access.model';
+import { Domain } from 'src/app/model/http/domain.model';
 
 @Component({
   selector: 'app-users-form',
@@ -22,13 +26,23 @@ import { MatOption, MatSelect } from '@angular/material/select';
     NgIf,
     MatError,
     MatButton,
+    CommonModule
   ],
 })
 export class UsersFormComponent implements OnInit {
+
   @Input() user = new User();
   @Output() submitEmitter = new EventEmitter<BasicUser>();
+
+  positions: Position [] = [];
+  accesses: Access [] = [];
+  domains: Domain [] = [];
+
   formGroup: FormGroup;
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private localStorageService: LocalStorageService
+  ) {
     this.formGroup = this.fb.group({
       idUser: [
         '',
@@ -56,7 +70,7 @@ export class UsersFormComponent implements OnInit {
           [
             Validators.required,
             Validators.minLength(1),
-            Validators.maxLength(2)
+            Validators.maxLength(10)
           ]
         )
       ],
@@ -84,7 +98,16 @@ export class UsersFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //this.formGroup.get('idUser')?.setValue(this.user.id);
+    const positions: Position [] = this.localStorageService.getItem('positions') ?? [];
+    if(positions) this.positions = positions;
+
+    const accesses: Access [] = this.localStorageService.getItem('access') ?? [];
+    if(accesses) this.accesses = accesses;
+
+    const domains: Domain [] = this.localStorageService.getItem('domains') ?? [];
+    if(domains) this.domains = domains;
+
+    this.formGroup.get('idUser')?.setValue(this.user.xuuser);
     this.formGroup.get('name')?.setValue(this.user.xuname);
     this.formGroup.get('position')?.setValue(this.user.xucarg);
     this.formGroup.get('domain')?.setValue(this.user.xudom);
@@ -93,8 +116,8 @@ export class UsersFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    const data = new BasicUser();
-    //data.id = this.formGroup.get('idUser')?.value;
+    const data = new User();
+    data.xuuser = this.formGroup.get('idUser')?.value;
     data.xuname = this.formGroup.get('name')?.value;
     data.xucarg = this.formGroup.get('position')?.value;
     data.xuacce = this.formGroup.get('accessLevel')?.value;

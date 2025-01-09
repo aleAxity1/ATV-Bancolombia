@@ -22,7 +22,7 @@ spring:
     url: jdbc:postgresql://localhost:5432/atv_db
     driver-class-name: org.postgresql.Driver
     username: postgres
-    password: 1234
+    password: root
 
   security:
     oauth2:

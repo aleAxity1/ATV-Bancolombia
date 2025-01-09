@@ -55,6 +55,14 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'assign-product/:id',
+    canActivate: [GuardService],
+    loadComponent: () =>
+      import('./pages/assign-user-product/assign-user-product.component').then(
+        (m) => m.AssignUserProductComponent
+      ),
+  },
+  {
     path: 'create',
     canActivate: [GuardService],
     loadComponent: () =>

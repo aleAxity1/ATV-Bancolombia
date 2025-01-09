@@ -33,7 +33,7 @@ export class EditUserComponent implements OnInit {
   getUser(id: string): void {
     this.usersService.getUserById(id).subscribe({
       next: (res) => {
-        if (res?.id) {
+        if (res?.xuuser) {
           this.editedUser = res;
           this.displayForm = true;
         }

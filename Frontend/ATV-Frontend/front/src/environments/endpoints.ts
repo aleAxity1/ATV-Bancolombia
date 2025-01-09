@@ -9,7 +9,15 @@ export const Endpoints = {
   },
   users: {
     users: `${environment.baseUrl}/users`,
+    userByBranch: `${environment.baseUrl}/branchbyuser`,
+    usersByProduct: `${environment.baseUrl}/users`,
     // http://localhost:9090 + /users -> http://localhost:9090/users
+  },
+  branch: {
+    branches: `${environment.baseUrl}/branch`
+  },
+  product: {
+    products: `${environment.baseUrl}/productdocument`
   },
   positions: {
     positions: `${environment.baseUrl}/positions`,
