@@ -26,7 +26,7 @@ public class ProductDocumentController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ProductDocumentDTO> getProductDocumentById(@PathVariable Integer id) {
+    public ResponseEntity<ProductDocumentDTO> getProductDocumentById(@PathVariable Long id) {
         return ResponseEntity.ok(productDocumentFacade.getProductDocumentById(id));
     }
 
@@ -36,7 +36,7 @@ public class ProductDocumentController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteProductDocument(@PathVariable Integer id) {
+    public ResponseEntity<Void> deleteProductDocument(@PathVariable Long id) {
         productDocumentFacade.deleteProductDocument(id);
         return ResponseEntity.noContent().build();
     }

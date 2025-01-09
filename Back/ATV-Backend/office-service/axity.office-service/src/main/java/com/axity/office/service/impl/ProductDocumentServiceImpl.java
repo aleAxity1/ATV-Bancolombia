@@ -39,7 +39,7 @@ public class ProductDocumentServiceImpl implements ProductDocumentService {
     }
 
     @Override
-    public ProductDocumentDTO getProductDocumentById(Integer id) {
+    public ProductDocumentDTO getProductDocumentById(Long id) {
         return productDocumentRepository.findById(id).map(this::mapToDTO).orElse(null);
     }
 
@@ -59,7 +59,7 @@ public class ProductDocumentServiceImpl implements ProductDocumentService {
     }
 
     @Override
-    public void deleteProductDocument(Integer id) {
+    public void deleteProductDocument(Long id) {
         productDocumentRepository.deleteById(id);
     }
 

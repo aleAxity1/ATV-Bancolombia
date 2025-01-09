@@ -10,4 +10,6 @@ public interface ProductByUserFacade {
     ProductByUserDTO getProductByUserById(Long id);
     ProductByUserDTO updateProductByUser(ProductByUserDTO productByUserDTO);
     void deleteProductByUser(Long id);
+    List<ProductByUserDTO> findAllByUser(String userId);
+    List<ProductByUserDTO> updateByUser(String userId, List<String> products);
 }

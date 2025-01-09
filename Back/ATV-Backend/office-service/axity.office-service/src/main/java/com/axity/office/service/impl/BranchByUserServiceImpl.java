@@ -9,7 +9,7 @@ import com.axity.office.service.BranchByUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -88,28 +88,33 @@ public class BranchByUserServiceImpl implements BranchByUserService {
     public List<BranchByUserDTO> updateByUser(String userId, List<Short> branches) {
     
         List<BranchByUser> currentList = branchByUserRepository.findAllByUser(userId);
+        if(!currentList.isEmpty() && currentList.size() > 0)
+        {
+            List<BranchByUser> objectsToRemove = currentList.stream()
+                .filter(branchByUser -> !branches.contains(branchByUser.getXscosu()))
+                .collect(Collectors.toList());
 
-        List<BranchByUser> objectsToRemove = currentList.stream()
-            .filter(branchByUser -> !branches.contains(branchByUser.getXscosu()))
-            .collect(Collectors.toList());
+            objectsToRemove.forEach(branchByUser->{
+                branchByUserRepository.deleteByUserAndBranch(branchByUser.getXsuser(), branchByUser.getXscosu());
+            });
+        }
 
-        objectsToRemove.forEach(branchByUser->{
-            branchByUserRepository.deleteByUserAndBranch(branchByUser.getXsuser(), branchByUser.getXscosu());
-        });
+        if(!branches.isEmpty() && branches.size() > 0)
+        {
+            List<BranchByUser> objectsToInsert = branches.stream()
+                .filter(id -> !currentList.stream().anyMatch(b -> b.getXscosu() == id.shortValue()))
+                .map(id -> {
+                    BranchByUser newEntity = new BranchByUser();
+                    newEntity.setXscosu(id);
+                    newEntity.setXsuser(userId);
+                    return newEntity;
+                })
+                .collect(Collectors.toList());
 
-        List<BranchByUser> objectsToInsert = branches.stream()
-            .filter(id -> !currentList.stream().anyMatch(b -> b.getXscosu() == id.shortValue()))
-            .map(id -> {
-                BranchByUser newEntity = new BranchByUser();
-                newEntity.setXscosu(id);
-                newEntity.setXsuser(userId);
-                return newEntity;
-            })
-            .collect(Collectors.toList());
-
-        objectsToInsert.forEach(branchByUser->{
-            branchByUserRepository.save(branchByUser);
-        });
+            objectsToInsert.forEach(branchByUser->{
+                branchByUserRepository.save(branchByUser);
+            });
+        }
         return findAllByUser(userId);
     }
 }

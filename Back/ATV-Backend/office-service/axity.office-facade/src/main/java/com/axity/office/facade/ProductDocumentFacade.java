@@ -7,7 +7,7 @@ import java.util.List;
 public interface ProductDocumentFacade {
     ProductDocumentDTO createProductDocument(ProductDocumentDTO productDocumentDTO);
     List<ProductDocumentDTO> getAllProductDocuments();
-    ProductDocumentDTO getProductDocumentById(Integer id);
+    ProductDocumentDTO getProductDocumentById(Long id);
     ProductDocumentDTO updateProductDocument(ProductDocumentDTO productDocumentDTO);
-    void deleteProductDocument(Integer id);
+    void deleteProductDocument(Long id);
 }

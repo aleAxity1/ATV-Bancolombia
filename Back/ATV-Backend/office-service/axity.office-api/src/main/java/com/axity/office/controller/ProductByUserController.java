@@ -1,5 +1,6 @@
 package com.axity.office.controller;
 
+import com.axity.office.commons.dto.BranchByUserDTO;
 import com.axity.office.commons.dto.ProductByUserDTO;
 import com.axity.office.facade.ProductByUserFacade;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/productbyuser")
+@RequestMapping("/productbyuser")
 public class ProductByUserController {
 
     @Autowired
@@ -25,15 +26,16 @@ public class ProductByUserController {
         return ResponseEntity.ok(productByUserFacade.getAllProductByUsers());
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<ProductByUserDTO> getProductByUserById(@PathVariable Long id) {
-        return ResponseEntity.ok(productByUserFacade.getProductByUserById(id));
+    @GetMapping("/{userId}")
+    public ResponseEntity<List<ProductByUserDTO>> read(@PathVariable String userId) {
+        return ResponseEntity.ok(productByUserFacade.findAllByUser(userId));
     }
 
-    @PutMapping
-    public ResponseEntity<ProductByUserDTO> updateProductByUser(@RequestBody ProductByUserDTO productByUserDTO) {
-        return ResponseEntity.ok(productByUserFacade.updateProductByUser(productByUserDTO));
+    @PutMapping("/{userId}")
+    public ResponseEntity<List<ProductByUserDTO>> update(@PathVariable String userId, @RequestBody List<String> products) {
+        return ResponseEntity.ok(productByUserFacade.updateByUser(userId, products));
     }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteProductByUser(@PathVariable Long id) {

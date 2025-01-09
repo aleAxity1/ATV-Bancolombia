@@ -25,11 +25,6 @@ public class BranchByUserController {
         return ResponseEntity.ok(branchByUserFacade.readAll());
     }
 
-    /*@GetMapping("/{id}")
-    public ResponseEntity<BranchByUserDTO> read(@PathVariable Long id) {
-        return ResponseEntity.ok(branchByUserFacade.read(id));
-    }*/
-
     @GetMapping("/{userId}")
     public ResponseEntity<List<BranchByUserDTO>> read(@PathVariable String userId) {
         return ResponseEntity.ok(branchByUserFacade.findAllByUser(userId));

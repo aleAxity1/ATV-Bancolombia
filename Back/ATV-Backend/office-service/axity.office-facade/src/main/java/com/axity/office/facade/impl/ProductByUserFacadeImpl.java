@@ -38,4 +38,14 @@ public class ProductByUserFacadeImpl implements ProductByUserFacade {
     public void deleteProductByUser(Long id) {
         productByUserService.deleteProductByUser(id);
     }
+
+    @Override
+    public List<ProductByUserDTO> findAllByUser(String userId) {
+        return productByUserService.findAllByUser(userId);
+    }
+
+    @Override
+    public List<ProductByUserDTO> updateByUser(String userId, List<String> products) {
+        return  productByUserService.updateByUser(userId, products);
+    }
 }
