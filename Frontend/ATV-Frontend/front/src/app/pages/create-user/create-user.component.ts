@@ -14,14 +14,18 @@ import { UsersFormComponent } from '../../components/users-form/users-form.compo
 })
 export class CreateUserComponent {
   constructor(
-    private userService: UsersService,
-    private dataService: DataService,
-    private router: Router
-  ) {}
+    private readonly userService: UsersService,
+    private readonly dataService: DataService,
+    private readonly router: Router,
+  ) { }
 
   createUser(user: BasicUser): void {
     this.userService.createUser(user).subscribe({
-      next: () => {
+      next: (response) => {
+        if (response) {
+          this.dataService.setGeneralNotificationMessage(`Alta Exitosa`);
+        }
+
         this.router.navigate(['users']);
       },
       error: (error) => this.dataService.setGeneralNotificationMessage(error),

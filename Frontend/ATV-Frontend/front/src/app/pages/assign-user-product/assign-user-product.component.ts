@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
 import { MatListOption, MatSelectionList } from '@angular/material/list';
 import { Product } from 'src/app/model/http/product.model';
+import { DataService } from 'src/app/services/data.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -25,7 +26,8 @@ export class AssignUserProductComponent implements OnInit {
   submittedItems: string[] = [];
 
   constructor(
-    private productService: ProductService
+    private readonly productService: ProductService,
+    private readonly dataService: DataService,
   ) { }
 
   ngOnInit(): void {
@@ -33,9 +35,7 @@ export class AssignUserProductComponent implements OnInit {
       next: (response) => {
         this.products = response;
       },
-      error: (error) => {
-        console.log(error)
-      }
+      error: (error) => this.dataService.setGeneralNotificationMessage(error),
     })
   }
 

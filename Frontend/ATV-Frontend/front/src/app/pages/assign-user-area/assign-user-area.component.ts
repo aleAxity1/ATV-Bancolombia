@@ -7,6 +7,7 @@ import { BranchService } from '../../services/branch.service';
 import { Branch } from 'src/app/model/http/branch.model';
 import { UsersService } from '../../services/user.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-assign-user-area',
@@ -28,10 +29,11 @@ export class AssignUserAreaComponent implements OnInit {
   idUser = '';
 
   constructor(
-    private branchService: BranchService,
-    private UsersService: UsersService,
-    private route: ActivatedRoute,
-    private router: Router
+    private readonly branchService: BranchService,
+    private readonly UsersService: UsersService,
+    private readonly route: ActivatedRoute,
+    private readonly router: Router,
+    private readonly dataService: DataService,
   ) { }
 
   ngOnInit(): void {
@@ -45,9 +47,7 @@ export class AssignUserAreaComponent implements OnInit {
       next: (response) => {
         this.branches = response;
       },
-      error: (error) => {
-        console.log(error)
-      }
+      error: (error) => this.dataService.setGeneralNotificationMessage(error),
     });
   }
 
@@ -60,9 +60,7 @@ export class AssignUserAreaComponent implements OnInit {
         )
         .map(branch => branch.xnnmky);
       },
-      error: (error) => {
-        console.log(error);
-      }
+      error: (error) => this.dataService.setGeneralNotificationMessage(error),
     })
   }
 
@@ -70,11 +68,14 @@ export class AssignUserAreaComponent implements OnInit {
     this.submittedItems = this.selectedItems.map(item => parseInt(item));
     this.UsersService.updateBranchByUser(this.idUser, this.submittedItems).subscribe({
       next: (response) => {
-        console.log(response);
+
+        if (response) {
+          this.dataService.setGeneralNotificationMessage(`Cambio Exitoso`);
+        }
+
+        this.router.navigate(['users']);
       },
-      error: (error) => {
-        console.log(error);
-      }
+      error: (error) => this.dataService.setGeneralNotificationMessage(error),
     })
   }
 }

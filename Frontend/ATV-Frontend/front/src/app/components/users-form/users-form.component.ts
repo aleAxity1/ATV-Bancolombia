@@ -40,8 +40,8 @@ export class UsersFormComponent implements OnInit {
 
   formGroup: FormGroup;
   constructor(
-    private fb: FormBuilder,
-    private localStorageService: LocalStorageService
+    private readonly fb: FormBuilder,
+    private readonly localStorageService: LocalStorageService,
   ) {
     this.formGroup = this.fb.group({
       idUser: [
@@ -98,30 +98,50 @@ export class UsersFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const positions: Position [] = this.localStorageService.getItem('positions') ?? [];
-    if(positions) this.positions = positions;
+    // SETEAR CATÁLOGOS CON LOCAL STORAGE
+    this.setPositions();
+    this.setAccess();
+    this.setDomains();
 
-    const accesses: Access [] = this.localStorageService.getItem('access') ?? [];
-    if(accesses) this.accesses = accesses;
-
-    const domains: Domain [] = this.localStorageService.getItem('domains') ?? [];
-    if(domains) this.domains = domains;
-
-    this.formGroup.get('idUser')?.setValue(this.user.xuuser);
-    this.formGroup.get('name')?.setValue(this.user.xuname);
-    this.formGroup.get('position')?.setValue(this.user.xucarg);
-    this.formGroup.get('domain')?.setValue(this.user.xudom);
-    this.formGroup.get('accessLevel')?.setValue(this.user.xuacce);
-    console.log(this.user)
+    // SETEAR FORMULARIO DE USUARIO
+    this.setFormGroup();
   }
 
   onSubmit(): void {
     const data = new User();
+
     data.xuuser = this.formGroup.get('idUser')?.value;
     data.xuname = this.formGroup.get('name')?.value;
     data.xucarg = this.formGroup.get('position')?.value;
-    data.xuacce = this.formGroup.get('accessLevel')?.value;
+    data.xuacce = parseInt(this.formGroup.get('accessLevel')?.value);
     data.xudom = this.formGroup.get('domain')?.value;
+
     this.submitEmitter.emit(data);
+  }
+
+  setFormGroup(): void {
+    this.formGroup.get('idUser')?.setValue(this.user.xuuser);
+    this.formGroup.get('name')?.setValue(this.user.xuname);
+    this.formGroup.get('position')?.setValue(this.user.xucarg);
+    this.formGroup.get('domain')?.setValue(this.user.xudom);
+    this.formGroup.get('accessLevel')?.setValue(this.user.xuacce.toString());
+  }
+
+  setAccess(): void {
+    const accesses: Access [] = this.localStorageService.getItem('access') ?? [];
+
+    if(accesses) this.accesses = accesses;
+  }
+
+  setDomains(): void {
+    const domains: Domain [] = this.localStorageService.getItem('domains') ?? [];
+
+    if(domains) this.domains = domains;
+  }
+
+  setPositions(): void {
+    const positions: Position [] = this.localStorageService.getItem('positions') ?? [];
+
+    if(positions) this.positions = positions;
   }
 }

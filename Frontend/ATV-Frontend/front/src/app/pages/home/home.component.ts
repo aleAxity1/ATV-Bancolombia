@@ -3,6 +3,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { RouterLink } from '@angular/router';
 import { MatButton } from '@angular/material/button';
 import { AppInitService } from '../../services/app-init.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-home',
@@ -14,17 +15,16 @@ import { AppInitService } from '../../services/app-init.service';
 export class HomeComponent implements OnInit{
 
   constructor(
-    private initService: AppInitService
-  ){}
+    private readonly initService: AppInitService,
+    private readonly dataService: DataService,
+  ) { }
 
   ngOnInit(): void {
     this.initService.loadInitialData().subscribe({
       next: (response) => {
         console.log(response);
       },
-      error: (error) => {
-        console.log(error)
-      }
+      error: (error) => this.dataService.setGeneralNotificationMessage(error),
     })
   }
 

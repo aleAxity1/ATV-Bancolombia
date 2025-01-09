@@ -17,10 +17,10 @@ export class EditUserComponent implements OnInit {
   editedUser = new User();
   displayForm = false;
   constructor(
-    private usersService: UsersService,
-    private dataService: DataService,
-    private route: ActivatedRoute,
-    private router: Router
+    private readonly usersService: UsersService,
+    private readonly dataService: DataService,
+    private readonly route: ActivatedRoute,
+    private readonly router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -50,7 +50,11 @@ export class EditUserComponent implements OnInit {
     newUser.xuacce = user.xuacce;
     newUser.xudom = user.xudom;
     this.usersService.editUser(newUser).subscribe({
-      next: () => {
+      next: (response) => {
+        if (response) {
+          this.dataService.setGeneralNotificationMessage(`Cambio Exitoso`);
+        }
+
         this.router.navigate(['users']);
       },
       error: (error) => this.dataService.setGeneralNotificationMessage(error),
