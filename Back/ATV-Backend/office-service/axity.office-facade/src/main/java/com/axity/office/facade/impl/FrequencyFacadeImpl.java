@@ -24,6 +24,11 @@ public class FrequencyFacadeImpl implements FrequencyFacade {
     public GenericResponseDto<FrequencyDto> find(Long id) {
         return frequencyService.find(id);
     }
+    
+    @Override
+    public GenericResponseDto<FrequencyDto> findByProductDocument(String productId, String documentId)  {
+        return frequencyService.findByProductDocument(productId, documentId);
+    }
 
     @Override
     public GenericResponseDto<FrequencyDto> create(FrequencyDto dto) {

@@ -65,6 +65,7 @@ public class ProductDocumentServiceImpl implements ProductDocumentService {
 
     private ProductDocumentDTO mapToDTO(ProductDocument productDocument) {
         ProductDocumentDTO dto = new ProductDocumentDTO();
+        dto.setXpid(productDocument.getXpid());
         dto.setXpcopr(productDocument.getXpcopr());
         dto.setXpcodo(productDocument.getXpcodo());
         dto.setXpdsdo(productDocument.getXpdsdo());

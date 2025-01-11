@@ -2,6 +2,9 @@ package com.axity.office.facade;
 
 import com.axity.office.commons.response.GenericResponseDto;
 import com.axity.office.commons.response.PaginatedResponseDto;
+
+import java.util.List;
+
 import com.axity.office.commons.dto.ProductDocumentByBranchDto;
 import com.axity.office.commons.request.PaginatedRequestDto;
 
@@ -11,4 +14,7 @@ public interface ProductDocumentByBranchFacade {
     GenericResponseDto<ProductDocumentByBranchDto> create(ProductDocumentByBranchDto dto);
     GenericResponseDto<Boolean> update(ProductDocumentByBranchDto dto);
     GenericResponseDto<Boolean> delete(Long  id);
+    PaginatedResponseDto<ProductDocumentByBranchDto> findByProductDocument(PaginatedRequestDto request, String productId,  String documentId);
+    GenericResponseDto<ProductDocumentByBranchDto> findByProductDocumentAndBranch(String productId,  String documentId, Short branchId);
+    GenericResponseDto<Boolean> updateByProductDocument(String productId, String documentId, List<Short> branches);
 }

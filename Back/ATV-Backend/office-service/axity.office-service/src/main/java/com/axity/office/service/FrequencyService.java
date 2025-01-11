@@ -11,4 +11,5 @@ public interface FrequencyService {
     GenericResponseDto<FrequencyDto> create(FrequencyDto dto);
     GenericResponseDto<Boolean> update(FrequencyDto dto);
     GenericResponseDto<Boolean> delete(Long id);
+    GenericResponseDto<FrequencyDto> findByProductDocument(String productId, String documentId); 
 }

@@ -30,14 +30,19 @@ public class FrequencyController {
         return new ResponseEntity<>(result, result == null ? HttpStatus.NO_CONTENT : HttpStatus.OK);
     }
 
+    @GetMapping("/{productId}/{documentId}")
+    public ResponseEntity<GenericResponseDto<FrequencyDto>> findFrequencyByProductDocument(@PathVariable String productId, @PathVariable String documentId) {
+        var result = this.frequencyFacade.findByProductDocument(productId, documentId);
+        return new ResponseEntity<>(result, result == null ? HttpStatus.NO_CONTENT : HttpStatus.OK);
+    }
+
     @PostMapping("")
     public ResponseEntity<GenericResponseDto<FrequencyDto>> create(@RequestBody FrequencyDto dto) {
         return new ResponseEntity<>(this.frequencyFacade.create(dto), HttpStatus.CREATED);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<GenericResponseDto<Boolean>> update(@PathVariable Long id, @RequestBody FrequencyDto dto) {
-        dto.setFxid(id);
+    @PutMapping()
+    public ResponseEntity<GenericResponseDto<Boolean>> update(@RequestBody FrequencyDto dto) {
         return ResponseEntity.ok(this.frequencyFacade.update(dto));
     }
 
